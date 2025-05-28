@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Signup/Login Form</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>User Authentication System</h1>
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="register">Register</button>
+        <button class="tab-btn" data-tab="login">Login</button>
+    </div>
+
+    <div id="register" class="tab-content active">
+        <div class="form-container">
+            <div class="form-section">
+                <h2>Create an Account</h2>
+                <form id="registerForm" novalidate>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="form-control"
+                               placeholder="Enter your first name"
+                               minlength="3" maxlength="15" required>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="form-control"
+                               placeholder="Enter your last name"
+                               minlength="3" maxlength="15" required>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control"
+                               placeholder="Enter your email"
+                               pattern="[^\s@]+@[^\s@]+\.[^\s@]+" required>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" name="password" class="form-control"
+                               placeholder="Enter your password"
+                               minlength="6" required>
+                        <i class="toggle-password" id="toggleRegPassword">👁️</i>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                               placeholder="Confirm your password" required>
+                        <i class="toggle-password" id="toggleConfirmPassword">👁️</i>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control"
+                               placeholder="+380..."
+                               pattern="^\+380\d{9}$" required>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthDate">Date of Birth</label>
+                        <input type="date" id="birthDate" name="birthDate" class="form-control" required>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sex</label>
+                        <div class="gender-options">
+                            <div class="gender-option">
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="gender-option">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" class="form-control" required>
+                            <option value="">Select a country</option>
+                            <option value="ukraine">Ukraine</option>
+                            <option value="usa">USA</option>
+                            <option value="germany">Germany</option>
+                            <option value="poland">Poland</option>
+                            <option value="france">France</option>
+                        </select>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <select id="city" name="city" class="form-control" disabled required>
+                            <option value="">Select a city</option>
+                        </select>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termsCheck" name="termsCheck" required>
+                        <label for="termsCheck">I agree to the Terms and Conditions</label>
+                    </div>
+                    <div class="feedback" id="termsCheckFeedback"></div>
+
+                    <button type="submit" class="btn" id="registerBtn">Register</button>
+                </form>
+                <div class="success-message" id="registerSuccess">
+                    You have been successfully registered!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login" class="tab-content">
+        <div class="form-container">
+            <div class="form-section">
+                <h2>Login to Your Account</h2>
+                <form id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" class="form-control"
+                               placeholder="Enter your username" required>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" class="form-control"
+                               placeholder="Enter your password"
+                               minlength="6" required>
+                        <i class="toggle-password" id="toggleLoginPassword">👁️</i>
+                        <div class="feedback"></div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">Remember Me</label>
+                    </div>
+
+                    <button type="submit" class="btn" id="loginBtn">Login</button>
+                </form>
+                <div class="success-message" id="loginSuccess">
+                    You have been successfully logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
